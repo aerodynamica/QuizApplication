@@ -1,13 +1,11 @@
-﻿Imports System.Threading
+﻿Imports System.ComponentModel
+Imports System.Threading
 Imports QuizApp
 
 Public Class EuhForm
 
     Private CurrentPlayer As Player
     Private TimeLeft As Integer
-
-    Private CountdownThread As Thread
-
     Private WithEvents Bridge As CardBridge
 
 
@@ -18,6 +16,9 @@ Public Class EuhForm
 
         TimeLeft = 60
         lblTimer.Text = TimeLeft.ToString
+
+        Bridge = New CardBridge()
+        Bridge.Start()
 
 
 
@@ -59,12 +60,18 @@ Public Class EuhForm
 
             End If
         Else
-                If CountdownTimer.Enabled Then
+            If CountdownTimer.Enabled Then
                 StopTimer()
-                updateCurrentPlayer(MainMenuForm.data.getPlayer(e.button))
+                CurrentPlayer = MainMenuForm.data.getPlayer(e.button)
+                Invoke(New MethodInvoker(Sub() updateCurrentPlayer(CurrentPlayer)))
 
             End If
 
         End If
+    End Sub
+
+    Private Sub EuhForm_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Bridge.Abort()
+
     End Sub
 End Class

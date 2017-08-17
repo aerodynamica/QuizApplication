@@ -27,6 +27,7 @@ Partial Class EuhForm
         Me.lblTimer = New System.Windows.Forms.Label()
         Me.btnStart = New System.Windows.Forms.Button()
         Me.CountdownTimer = New System.Windows.Forms.Timer(Me.components)
+        Me.lblOnderwerp = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lblCurrentPlayerName
@@ -62,11 +63,19 @@ Partial Class EuhForm
         '
         Me.CountdownTimer.Interval = 1000
         '
+        'lblOnderwerp
+        '
+        Me.lblOnderwerp.Location = New System.Drawing.Point(73, 350)
+        Me.lblOnderwerp.Name = "lblOnderwerp"
+        Me.lblOnderwerp.Size = New System.Drawing.Size(100, 20)
+        Me.lblOnderwerp.TabIndex = 2
+        '
         'EuhForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(711, 490)
+        Me.Controls.Add(Me.lblOnderwerp)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.lblCurrentPlayerName)
@@ -81,4 +90,5 @@ Partial Class EuhForm
     Friend WithEvents lblTimer As Label
     Friend WithEvents btnStart As Button
     Friend WithEvents CountdownTimer As Timer
+    Friend WithEvents lblOnderwerp As TextBox
 End Class

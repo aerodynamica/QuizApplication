@@ -18,6 +18,11 @@ Public Class CardBridge
         thr.Start()
     End Sub
 
+    Public Sub Abort()
+        thr.Abort()
+    End Sub
+
+
 
     Public Sub ThreadTask()
         cc.Connect()

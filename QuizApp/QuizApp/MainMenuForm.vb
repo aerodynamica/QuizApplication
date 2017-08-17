@@ -2,7 +2,7 @@
 
 Public Class MainMenuForm
 
-    Public data As QuizData
+    Public Shared data As QuizData
 
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
         Dim form As New QuizForm()
