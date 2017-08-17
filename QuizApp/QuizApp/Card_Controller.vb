@@ -62,6 +62,7 @@ Public Class Card_Controller
 
 
 
+
         CloseDevice
     End Sub
 
