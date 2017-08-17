@@ -35,6 +35,9 @@ Public Class Card_Controller
 
     Public Function Connect() As Boolean
 
+
+
+
         _CardAddress = 0 'both pins still present
 
         _Handle = OpenDevice(_CardAddress)
@@ -55,13 +58,8 @@ Public Class Card_Controller
     Public Sub Disconnect()
         _IsConnected = False
 
-        For i = 1 To 9
-            ClearDigitalChannel(i)
-        Next
-
-
-
-
+        ClearAllDigital
+        ClearAllAnalog
 
         CloseDevice
     End Sub
@@ -93,6 +91,9 @@ Public Class Card_Controller
         Return ReadDigitalChannel(location)
 
     End Function
+
+
+
 
 
     'Public Function CheckAllButtons() As List(Of Boolean)
