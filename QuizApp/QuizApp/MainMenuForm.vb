@@ -37,4 +37,10 @@ Public Class MainMenuForm
 
 
     End Sub
+
+    Private Sub btnEuh_Click(sender As Object, e As EventArgs) Handles btnEuh.Click
+        Dim form As New EuhForm()
+        form.Show()
+        Me.Close()
+    End Sub
 End Class

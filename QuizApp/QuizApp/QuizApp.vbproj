@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EuhForm.Designer.vb">
+      <DependentUpon>EuhForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EuhForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Player.vb" />
     <Compile Include="MainMenuForm.vb">
       <SubType>Form</SubType>
@@ -110,6 +116,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EuhForm.resx">
+      <DependentUpon>EuhForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.vb</DependentUpon>
     </EmbeddedResource>
