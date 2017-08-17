@@ -86,7 +86,7 @@ Public Class Card_Controller
             Return False
 
         End If
-        MessageBox.Show("Card is not active")
+        MessageBox.Show("Kaart niet actief")
         Return False
     End Function
 
@@ -94,8 +94,9 @@ Public Class Card_Controller
     Public Function IsButtonPressed(ByVal location As Integer) As Boolean
         'requires some error handling for positions still
 
-
         Return ReadDigitalChannel(location)
+
+
 
     End Function
 
@@ -138,7 +139,7 @@ Public Class Card_Controller
         Try
             ButtonStatus = ReadAllDigital
         Catch ex As Exception
-            MessageBox.Show("Something went wrong during the check")
+            MessageBox.Show("Fout tijdens het controleren van de buttons")
             Return Nothing
         End Try
 
@@ -167,7 +168,7 @@ Public Class Card_Controller
             Return Bool_array
         End If
 
-        MessageBox.Show("Something went wrong during the Boolean creation")
+        MessageBox.Show("Fout tijdens het creeeren van de boolean list")
         Return Nothing
 
     End Function

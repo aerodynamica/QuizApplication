@@ -103,9 +103,9 @@ Public Class QuizForm
 
                     Me.Invoke(Sub() DisplayNameBig(1))
 
-                    CardControl.ActivateLed(8, True)
+                    CardControl.ActivateLed(1, True)
                     Thread.Sleep(1000)
-                    CardControl.ActivateLed(8, False)
+                    CardControl.ActivateLed(1, False)
 
                 End If
             End While
@@ -124,9 +124,9 @@ Public Class QuizForm
                     Me.Invoke(Sub() DisplayNameBig(2))
 
 
-                    CardControl.ActivateLed(7, True)
+                    CardControl.ActivateLed(1, True)
                     Thread.Sleep(1000)
-                    CardControl.ActivateLed(7, False)
+                    CardControl.ActivateLed(1, False)
                 End If
             End While
         End If
@@ -144,9 +144,9 @@ Public Class QuizForm
                     Me.Invoke(Sub() DisplayNameBig(3))
 
 
-                    CardControl.ActivateLed(6, True)
+                    CardControl.ActivateLed(1, True)
                     Thread.Sleep(1000)
-                    CardControl.ActivateLed(6, False)
+                    CardControl.ActivateLed(1, False)
                 End If
             End While
         End If
@@ -158,14 +158,14 @@ Public Class QuizForm
                 If (CardControl.IsButtonPressed(4) And PlayerPressed = False) Then
                     PlayerPressed = True
                     'DisplayNameBig(4)
-                    CardControl.ActivateLed(5, True)
+
 
 
                     Me.Invoke(Sub() DisplayNameBig(4))
 
-                    CardControl.ActivateLed(5, True)
+                    CardControl.ActivateLed(1, True)
                     Thread.Sleep(1000)
-                    CardControl.ActivateLed(5, False)
+                    CardControl.ActivateLed(1, False)
 
                 End If
             End While
