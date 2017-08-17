@@ -137,6 +137,14 @@ Public Class Card_Controller
 
         Dim Button_Binary As String = Convert.ToString(ButtonStatus, 2)
 
+        Dim looper = Button_Binary.Length
+
+        While Not looper = 5
+            Button_Binary = "0" + Button_Binary
+
+            looper = Button_Binary.Length
+        End While
+
 
 
         For loc As Integer = 0 To Button_Binary.Length - 1
