@@ -4,13 +4,13 @@ Public Class MainMenuForm
 
     Public Shared data As QuizData
 
-    Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
+    Private Sub BtnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
         Dim form As New QuizForm()
         form.Show()
         Me.Close()
     End Sub
 
-    Private Sub btnNames_Click(sender As Object, e As EventArgs) Handles btnNames.Click
+    Private Sub BtnNames_Click(sender As Object, e As EventArgs) Handles btnNames.Click
         Dim form As New NamesForm()
         form.Show()
     End Sub
@@ -23,11 +23,12 @@ Public Class MainMenuForm
             file.Close()
         Else
             'create default quiz data
-            data = New QuizData()
-            data.Player1 = New Player("speler1")
-            data.Player2 = New Player("speler2")
-            data.Player3 = New Player("speler3")
-            data.Player4 = New Player("speler4")
+            data = New QuizData With {
+                .Player1 = New Player("speler1"),
+                .Player2 = New Player("speler2"),
+                .Player3 = New Player("speler3"),
+                .Player4 = New Player("speler4")
+            }
 
             Dim writer As New System.Xml.Serialization.XmlSerializer(GetType(QuizData))
             Dim file As New System.IO.StreamWriter("players.xml")
@@ -38,7 +39,7 @@ Public Class MainMenuForm
 
     End Sub
 
-    Private Sub btnEuh_Click(sender As Object, e As EventArgs) Handles btnEuh.Click
+    Private Sub BtnEuh_Click(sender As Object, e As EventArgs) Handles btnEuh.Click
         Dim form As New EuhForm()
         form.Show()
         Me.Close()
