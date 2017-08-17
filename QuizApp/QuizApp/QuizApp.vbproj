@@ -72,6 +72,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardBridge.vb" />
     <Compile Include="Card_Controller.vb" />
     <Compile Include="EuhForm.Designer.vb">
       <DependentUpon>EuhForm.vb</DependentUpon>
