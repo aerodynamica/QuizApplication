@@ -27,7 +27,8 @@ Partial Class EuhForm
         Me.lblTimer = New System.Windows.Forms.Label()
         Me.btnStart = New System.Windows.Forms.Button()
         Me.CountdownTimer = New System.Windows.Forms.Timer(Me.components)
-        Me.lblOnderwerp = New System.Windows.Forms.TextBox()
+        Me.lblSubject = New System.Windows.Forms.TextBox()
+        Me.lblForbidden = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'lblCurrentPlayerName
@@ -44,7 +45,7 @@ Partial Class EuhForm
         '
         Me.lblTimer.AutoSize = True
         Me.lblTimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 90.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTimer.Location = New System.Drawing.Point(262, 166)
+        Me.lblTimer.Location = New System.Drawing.Point(263, 98)
         Me.lblTimer.Name = "lblTimer"
         Me.lblTimer.Size = New System.Drawing.Size(156, 135)
         Me.lblTimer.TabIndex = 0
@@ -63,19 +64,29 @@ Partial Class EuhForm
         '
         Me.CountdownTimer.Interval = 1000
         '
-        'lblOnderwerp
+        'lblSubject
         '
-        Me.lblOnderwerp.Location = New System.Drawing.Point(73, 350)
-        Me.lblOnderwerp.Name = "lblOnderwerp"
-        Me.lblOnderwerp.Size = New System.Drawing.Size(100, 20)
-        Me.lblOnderwerp.TabIndex = 2
+        Me.lblSubject.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSubject.Location = New System.Drawing.Point(60, 298)
+        Me.lblSubject.Name = "lblSubject"
+        Me.lblSubject.Size = New System.Drawing.Size(288, 38)
+        Me.lblSubject.TabIndex = 2
+        '
+        'lblForbidden
+        '
+        Me.lblForbidden.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblForbidden.Location = New System.Drawing.Point(60, 349)
+        Me.lblForbidden.Name = "lblForbidden"
+        Me.lblForbidden.Size = New System.Drawing.Size(288, 38)
+        Me.lblForbidden.TabIndex = 2
         '
         'EuhForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(711, 490)
-        Me.Controls.Add(Me.lblOnderwerp)
+        Me.Controls.Add(Me.lblForbidden)
+        Me.Controls.Add(Me.lblSubject)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.lblCurrentPlayerName)
@@ -90,5 +101,6 @@ Partial Class EuhForm
     Friend WithEvents lblTimer As Label
     Friend WithEvents btnStart As Button
     Friend WithEvents CountdownTimer As Timer
-    Friend WithEvents lblOnderwerp As TextBox
+    Friend WithEvents lblSubject As TextBox
+    Friend WithEvents lblForbidden As TextBox
 End Class
