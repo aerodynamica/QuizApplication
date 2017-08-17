@@ -33,7 +33,7 @@ Partial Class MainMenuForm
         Me.btnQuiz.Name = "btnQuiz"
         Me.btnQuiz.Size = New System.Drawing.Size(244, 47)
         Me.btnQuiz.TabIndex = 0
-        Me.btnQuiz.Text = "Quiz mode"
+        Me.btnQuiz.Text = "Quizmodus"
         Me.btnQuiz.UseVisualStyleBackColor = True
         '
         'btnEuh
@@ -42,7 +42,7 @@ Partial Class MainMenuForm
         Me.btnEuh.Name = "btnEuh"
         Me.btnEuh.Size = New System.Drawing.Size(244, 47)
         Me.btnEuh.TabIndex = 1
-        Me.btnEuh.Text = "'Zeg eens euh' mode"
+        Me.btnEuh.Text = "Zeg-eens-euh-modus"
         Me.btnEuh.UseVisualStyleBackColor = True
         '
         'btnNames
