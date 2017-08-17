@@ -47,6 +47,8 @@ Public Class Card_Controller
                 _IsConnected = True
                 Return True
             Case -1
+                MessageBox.Show("Kaart niet gevonden")
+                _IsConnected = False
                 Return False
         End Select
 

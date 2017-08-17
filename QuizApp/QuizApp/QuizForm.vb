@@ -61,6 +61,7 @@ Public Class QuizForm
         IsActive = CardControl.Connect()
 
 
+
         Player1Watch = New System.Threading.Thread(AddressOf CheckInputPlayer1)
         Player2Watch = New System.Threading.Thread(AddressOf CheckInputPlayer2)
         Player3Watch = New System.Threading.Thread(AddressOf CheckInputPlayer3)
@@ -73,6 +74,11 @@ Public Class QuizForm
         Player3Watch.Start()
         Player4Watch.Start()
         RefereeWatch.Start()
+
+
+        If (IsActive = False) Then
+            Me.Close()
+        End If
 
     End Sub
 
@@ -192,7 +198,9 @@ Public Class QuizForm
         RefereeWatch.Abort()
 
 
+        If (IsActive) Then
+            CardControl.Disconnect()
+        End If
 
-        CardControl.Disconnect()
     End Sub
 End Class
