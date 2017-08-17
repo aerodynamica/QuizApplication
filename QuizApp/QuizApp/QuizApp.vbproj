@@ -149,5 +149,11 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Quiz_Image.jpg" />
+    <None Include="Resources\ZegEensEuh.jpg" />
+    <None Include="Resources\Quiz_Image.jpg" />
+    <Content Include="ZegEensEuh.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
