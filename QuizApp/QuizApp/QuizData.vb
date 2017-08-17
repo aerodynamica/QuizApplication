@@ -39,4 +39,8 @@
         End Set
     End Property
 
+    Public Function getPlayer(ByVal n As Integer) As Player
+        Return _players(n)
+    End Function
+
 End Class
