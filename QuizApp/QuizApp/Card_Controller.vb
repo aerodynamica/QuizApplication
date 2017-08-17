@@ -152,13 +152,12 @@ Public Class Card_Controller
         End While
 
 
-
         For loc As Integer = 0 To Button_Binary.Length - 1
             Dim tempconversion As Integer
             Integer.TryParse(Button_Binary(loc), tempconversion)
 
 
-            Bool_array(loc) = CBool(tempconversion)
+            Bool_array(Button_Binary.Length - 1 - loc) = CBool(tempconversion)
 
         Next
 
