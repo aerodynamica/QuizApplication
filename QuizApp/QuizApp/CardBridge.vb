@@ -8,9 +8,11 @@ Public Class CardBridge
 
     Public Event ButtonPressed(ByVal sender As Object, ByVal e As ButtonPressedEventArgs)
 
+    Private WithEvents EuhForm As EuhForm
 
-    Public Sub New()
+    Public Sub New(ByRef form As EuhForm)
         cc = New Card_Controller()
+        EuhForm = form
     End Sub
 
     Public Sub Start()
@@ -19,6 +21,7 @@ Public Class CardBridge
     End Sub
 
     Public Sub Abort()
+        cc.Disconnect()
         thr.Abort()
     End Sub
 
@@ -42,16 +45,24 @@ Public Class CardBridge
         Loop
     End Sub
 
+    Private Sub EuhForm_TimeOut(sender As Object, e As EventArgs) Handles EuhForm.TimeOut
+        cc.ActivateLed(1, True)
+        Thread.Sleep(3000)
+        cc.ActivateLed(1, False)
+    End Sub
 
-
-
+    Private Sub EuhForm_PlayerInterupt(sender As Object, e As EventArgs) Handles EuhForm.PlayerInterupt
+        cc.ActivateLed(1, True)
+        Thread.Sleep(1000)
+        cc.ActivateLed(1, False)
+    End Sub
 
     Public Class ButtonPressedEventArgs
         Inherits EventArgs
 
         Private btn As Integer
 
-        Public Property button As Integer
+        Public Property Button As Integer
             Get
                 Return btn
             End Get

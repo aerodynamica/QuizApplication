@@ -75,6 +75,7 @@ Partial Class EuhForm
         'lblForbidden
         '
         Me.lblForbidden.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblForbidden.ForeColor = System.Drawing.Color.Red
         Me.lblForbidden.Location = New System.Drawing.Point(60, 349)
         Me.lblForbidden.Name = "lblForbidden"
         Me.lblForbidden.Size = New System.Drawing.Size(288, 38)

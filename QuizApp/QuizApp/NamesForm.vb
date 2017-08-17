@@ -1,14 +1,13 @@
 ﻿Imports System.Xml.Serialization
 
 Public Class NamesForm
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim quizData As New QuizData()
-
-        quizData.Player1 = New Player(txtNamePlayer1.Text)
-        quizData.Player2 = New Player(txtNamePlayer2.Text)
-        quizData.Player3 = New Player(txtNamePlayer3.Text)
-        quizData.Player4 = New Player(txtNamePlayer4.Text)
-
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim quizData = New QuizData With {
+            .Player1 = New Player(txtNamePlayer1.Text),
+            .Player2 = New Player(txtNamePlayer2.Text),
+            .Player3 = New Player(txtNamePlayer3.Text),
+            .Player4 = New Player(txtNamePlayer4.Text)
+        }
 
         MainMenuForm.data = quizData
 
