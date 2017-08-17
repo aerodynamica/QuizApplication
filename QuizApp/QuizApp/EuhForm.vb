@@ -54,7 +54,7 @@ Public Class EuhForm
     End Sub
 
     Private Sub Bridge_ButtonPressed(sender As Object, e As CardBridge.ButtonPressedEventArgs) Handles Bridge.ButtonPressed
-        If e.button = 5 Then
+        If e.button = 4 Then
             If Not CountdownTimer.Enabled Then
                 StartTimer()
 
