@@ -35,9 +35,11 @@ Partial Class NamesForm
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(268, 246)
+        Me.btnSave.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.Location = New System.Drawing.Point(95, 127)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(75, 23)
+        Me.btnSave.Size = New System.Drawing.Size(122, 31)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "Opslaan"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -46,15 +48,17 @@ Partial Class NamesForm
         '
         Me.lblNaamSpeler1.AutoSize = True
         Me.lblNaamSpeler1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNaamSpeler1.Location = New System.Drawing.Point(91, 77)
+        Me.lblNaamSpeler1.Location = New System.Drawing.Point(44, 12)
         Me.lblNaamSpeler1.Name = "lblNaamSpeler1"
-        Me.lblNaamSpeler1.Size = New System.Drawing.Size(96, 16)
+        Me.lblNaamSpeler1.Size = New System.Drawing.Size(64, 16)
         Me.lblNaamSpeler1.TabIndex = 1
-        Me.lblNaamSpeler1.Text = "Naam speler 1"
+        Me.lblNaamSpeler1.Text = "Speler 1 :"
         '
         'txtNamePlayer1
         '
-        Me.txtNamePlayer1.Location = New System.Drawing.Point(193, 77)
+        Me.txtNamePlayer1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNamePlayer1.Location = New System.Drawing.Point(114, 11)
         Me.txtNamePlayer1.Name = "txtNamePlayer1"
         Me.txtNamePlayer1.Size = New System.Drawing.Size(150, 20)
         Me.txtNamePlayer1.TabIndex = 2
@@ -63,15 +67,17 @@ Partial Class NamesForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(91, 114)
+        Me.Label1.Location = New System.Drawing.Point(44, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 16)
+        Me.Label1.Size = New System.Drawing.Size(64, 16)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Naam speler 2"
+        Me.Label1.Text = "Speler 2 :"
         '
         'txtNamePlayer2
         '
-        Me.txtNamePlayer2.Location = New System.Drawing.Point(193, 114)
+        Me.txtNamePlayer2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNamePlayer2.Location = New System.Drawing.Point(114, 37)
         Me.txtNamePlayer2.Name = "txtNamePlayer2"
         Me.txtNamePlayer2.Size = New System.Drawing.Size(150, 20)
         Me.txtNamePlayer2.TabIndex = 2
@@ -80,15 +86,17 @@ Partial Class NamesForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(91, 153)
+        Me.Label2.Location = New System.Drawing.Point(44, 64)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(96, 16)
+        Me.Label2.Size = New System.Drawing.Size(64, 16)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Naam speler 3"
+        Me.Label2.Text = "Speler 3 :"
         '
         'txtNamePlayer3
         '
-        Me.txtNamePlayer3.Location = New System.Drawing.Point(193, 153)
+        Me.txtNamePlayer3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNamePlayer3.Location = New System.Drawing.Point(114, 63)
         Me.txtNamePlayer3.Name = "txtNamePlayer3"
         Me.txtNamePlayer3.Size = New System.Drawing.Size(150, 20)
         Me.txtNamePlayer3.TabIndex = 2
@@ -97,15 +105,17 @@ Partial Class NamesForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(91, 188)
+        Me.Label3.Location = New System.Drawing.Point(44, 90)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(96, 16)
+        Me.Label3.Size = New System.Drawing.Size(64, 16)
         Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Naam speler 4"
+        Me.Label3.Text = "Speler 4 :"
         '
         'txtNamePlayer4
         '
-        Me.txtNamePlayer4.Location = New System.Drawing.Point(193, 188)
+        Me.txtNamePlayer4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtNamePlayer4.Location = New System.Drawing.Point(114, 89)
         Me.txtNamePlayer4.Name = "txtNamePlayer4"
         Me.txtNamePlayer4.Size = New System.Drawing.Size(150, 20)
         Me.txtNamePlayer4.TabIndex = 2
@@ -114,7 +124,7 @@ Partial Class NamesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(490, 396)
+        Me.ClientSize = New System.Drawing.Size(318, 170)
         Me.Controls.Add(Me.txtNamePlayer4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtNamePlayer3)
@@ -125,7 +135,7 @@ Partial Class NamesForm
         Me.Controls.Add(Me.lblNaamSpeler1)
         Me.Controls.Add(Me.btnSave)
         Me.Name = "NamesForm"
-        Me.Text = "NamesForm"
+        Me.Text = "Input namen van spelers"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
