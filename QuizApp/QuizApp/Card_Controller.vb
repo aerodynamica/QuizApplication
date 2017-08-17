@@ -65,6 +65,11 @@ Public Class Card_Controller
     End Sub
 
 
+    Public Sub ClearCardForUse()
+        ClearAllDigital
+        ClearAllAnalog
+    End Sub
+
     Public Function ActivateLed(ByVal _position As Integer, ByVal _status As Boolean) As Boolean
 
         If _IsConnected Then
