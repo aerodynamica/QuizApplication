@@ -20,6 +20,10 @@
     End Property
 
 
+    Public Overrides Function toString() As String
+        Return FirstName
+    End Function
+
 
 
 End Class

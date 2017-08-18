@@ -7,7 +7,6 @@ Public Class CardBridge
     Private cc As Card_Controller
 
     Public Event ButtonPressed(ByVal sender As Object, ByVal e As ButtonPressedEventArgs)
-
     Private WithEvents EuhForm As EuhForm
 
     Private _IsActive As Boolean = False

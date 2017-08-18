@@ -4,8 +4,29 @@ Imports QuizApp
 
 Public Class EuhForm
 
-    Private CurrentPlayer As Player
-    Private TimeLeft As Integer
+    Private _CurrentPlayer As Player
+
+    Public Property CurrentPlayer As Player
+        Get
+            Return _CurrentPlayer
+        End Get
+        Set(value As Player)
+            _CurrentPlayer = value
+        End Set
+    End Property
+
+
+    Private _TimeLeft As Integer
+
+    Public Property TimeLeft As Integer
+        Get
+            Return _TimeLeft
+        End Get
+        Set(value As Integer)
+            _TimeLeft = value
+        End Set
+    End Property
+
     Private WithEvents Bridge As CardBridge
 
     Public Event PlayerInterupt(ByVal sender As Object, ByVal e As EventArgs)
@@ -17,10 +38,12 @@ Public Class EuhForm
     Private TimeOutThread As Thread
 
     Private Sub EuhForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        UpdateCurrentPlayer(MainMenuForm.data.GetPlayer(0))
 
-        TimeLeft = 60
-        lblTimer.Text = TimeLeft.ToString
+        NewGame()
+        'UpdateCurrentPlayer(MainMenuForm.data.GetPlayer(0))
+
+        'TimeLeft = 60
+        'lblTimer.Text = TimeLeft.ToString
 
         Bridge = New CardBridge(Me)
         Bridge.Start()
@@ -39,14 +62,17 @@ Public Class EuhForm
     End Sub
 
     Private Sub StartTimer()
-        CountdownTimer.Start()
+        If TimeLeft > 0 Then
+            CountdownTimer.Start()
+        End If
+
     End Sub
 
     Private Sub StopTimer()
         CountdownTimer.Stop()
     End Sub
 
-    Private Sub UpdateCurrentPlayer(ByRef player As Player)
+    Public Sub UpdateCurrentPlayer(ByRef player As Player)
         CurrentPlayer = player
         lblCurrentPlayerName.Text = player.FirstName
     End Sub
@@ -85,4 +111,13 @@ Public Class EuhForm
         End If
     End Sub
 
+    Private Sub NewGame()
+        StopTimer()
+        Dim newForm As New NewEuhForm(Me)
+        newForm.Show()
+    End Sub
+
+    Private Sub btnStartNew_Click(sender As Object, e As EventArgs) Handles btnStartNew.Click
+        NewGame()
+    End Sub
 End Class

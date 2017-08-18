@@ -95,6 +95,12 @@
     <Compile Include="EuhForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewEuhForm.Designer.vb">
+      <DependentUpon>NewEuhForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEuhForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Player.vb" />
     <Compile Include="MainMenuForm.vb">
       <SubType>Form</SubType>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NamesForm.resx">
       <DependentUpon>NamesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEuhForm.resx">
+      <DependentUpon>NewEuhForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuizForm.resx">
       <DependentUpon>QuizForm.vb</DependentUpon>
