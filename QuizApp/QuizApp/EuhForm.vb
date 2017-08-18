@@ -12,17 +12,25 @@ Public Class EuhForm
 
     Public Event TimeOut(ByVal sender As Object, ByVal e As EventArgs)
 
+    Dim IsActive As Boolean = False
+
+    Private TimeOutThread As Thread
 
     Private Sub EuhForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        updateCurrentPlayer(MainMenuForm.data.getPlayer(0))
+        UpdateCurrentPlayer(MainMenuForm.data.GetPlayer(0))
 
-        TimeLeft = 60
+        TimeLeft = 2
         lblTimer.Text = TimeLeft.ToString
 
         Bridge = New CardBridge(Me)
         Bridge.Start()
 
+        IsActive = Bridge.IsActive()
 
+
+        If (IsActive = False) Then
+            Me.Close()
+        End If
 
     End Sub
 
@@ -52,12 +60,16 @@ Public Class EuhForm
 
         If TimeLeft = 0 Then
             StopTimer()
-            RaiseEvent TimeOut(Me, EventArgs.Empty)
+
+            Dim TimeOutThread As New Threading.Thread(Sub() RaiseEvent TimeOut(Me, EventArgs.Empty))
+            TimeOutThread.Name = "TimeOutThread"
+            TimeOutThread.IsBackground = True
+            TimeOutThread.Start()
         End If
     End Sub
 
     Private Sub Bridge_ButtonPressed(sender As Object, e As CardBridge.ButtonPressedEventArgs) Handles Bridge.ButtonPressed
-        If e.button = 4 Then
+        If e.Button = 4 Then
             If Not CountdownTimer.Enabled Then
                 Invoke(New MethodInvoker(AddressOf StartTimer))
 
@@ -65,17 +77,12 @@ Public Class EuhForm
         Else
             If CountdownTimer.Enabled Then
                 StopTimer()
-                CurrentPlayer = MainMenuForm.data.getPlayer(e.button)
-                Invoke(New MethodInvoker(Sub() updateCurrentPlayer(CurrentPlayer)))
+                CurrentPlayer = MainMenuForm.data.GetPlayer(e.Button)
+                Invoke(New MethodInvoker(Sub() UpdateCurrentPlayer(CurrentPlayer)))
                 RaiseEvent PlayerInterupt(Me, EventArgs.Empty)
-
             End If
 
         End If
     End Sub
 
-    Private Sub EuhForm_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Bridge.Abort()
-
-    End Sub
 End Class
