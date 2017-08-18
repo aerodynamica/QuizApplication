@@ -174,9 +174,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="K8055D.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Quiz_Image.jpg" />
     <None Include="Resources\ZegEensEuh.jpg" />
     <None Include="Resources\Quiz_Image.jpg" />
+    <Content Include="ReadMe_DLL_Placement.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ZegEensEuh.jpg" />
   </ItemGroup>
   <ItemGroup>
