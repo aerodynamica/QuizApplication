@@ -35,26 +35,29 @@ Partial Class EuhForm
         'lblCurrentPlayerName
         '
         Me.lblCurrentPlayerName.AutoSize = True
+        Me.lblCurrentPlayerName.Dock = System.Windows.Forms.DockStyle.Top
         Me.lblCurrentPlayerName.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCurrentPlayerName.Location = New System.Drawing.Point(28, 28)
+        Me.lblCurrentPlayerName.Location = New System.Drawing.Point(0, 0)
         Me.lblCurrentPlayerName.Name = "lblCurrentPlayerName"
-        Me.lblCurrentPlayerName.Size = New System.Drawing.Size(232, 39)
+        Me.lblCurrentPlayerName.Size = New System.Drawing.Size(47, 39)
         Me.lblCurrentPlayerName.TabIndex = 0
-        Me.lblCurrentPlayerName.Text = "huidige speler"
+        Me.lblCurrentPlayerName.Text = "..."
         '
         'lblTimer
         '
-        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblTimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 90.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTimer.Location = New System.Drawing.Point(263, 98)
+        Me.lblTimer.Location = New System.Drawing.Point(0, 39)
         Me.lblTimer.Name = "lblTimer"
-        Me.lblTimer.Size = New System.Drawing.Size(156, 135)
+        Me.lblTimer.Size = New System.Drawing.Size(724, 469)
         Me.lblTimer.TabIndex = 0
         Me.lblTimer.Text = "..."
+        Me.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(569, 192)
+        Me.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnStart.Location = New System.Drawing.Point(616, 226)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 1
@@ -67,28 +70,31 @@ Partial Class EuhForm
         '
         'lblOnderwerp
         '
+        Me.lblOnderwerp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblOnderwerp.AutoSize = True
         Me.lblOnderwerp.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOnderwerp.Location = New System.Drawing.Point(78, 294)
         Me.lblOnderwerp.Name = "lblOnderwerp"
-        Me.lblOnderwerp.Size = New System.Drawing.Size(203, 42)
+        Me.lblOnderwerp.Size = New System.Drawing.Size(48, 42)
         Me.lblOnderwerp.TabIndex = 3
-        Me.lblOnderwerp.Text = "Onderwerp"
+        Me.lblOnderwerp.Text = "..."
         '
         'lblVerboden
         '
+        Me.lblVerboden.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblVerboden.AutoSize = True
         Me.lblVerboden.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVerboden.ForeColor = System.Drawing.Color.Red
         Me.lblVerboden.Location = New System.Drawing.Point(78, 353)
         Me.lblVerboden.Name = "lblVerboden"
-        Me.lblVerboden.Size = New System.Drawing.Size(293, 42)
+        Me.lblVerboden.Size = New System.Drawing.Size(48, 42)
         Me.lblVerboden.TabIndex = 3
-        Me.lblVerboden.Text = "Verboden woord"
+        Me.lblVerboden.Text = "..."
         '
         'btnStartNew
         '
-        Me.btnStartNew.Location = New System.Drawing.Point(547, 434)
+        Me.btnStartNew.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnStartNew.Location = New System.Drawing.Point(310, 459)
         Me.btnStartNew.Name = "btnStartNew"
         Me.btnStartNew.Size = New System.Drawing.Size(134, 23)
         Me.btnStartNew.TabIndex = 4
@@ -99,7 +105,7 @@ Partial Class EuhForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(711, 490)
+        Me.ClientSize = New System.Drawing.Size(724, 508)
         Me.Controls.Add(Me.btnStartNew)
         Me.Controls.Add(Me.lblVerboden)
         Me.Controls.Add(Me.lblOnderwerp)
@@ -107,7 +113,7 @@ Partial Class EuhForm
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.lblCurrentPlayerName)
         Me.Name = "EuhForm"
-        Me.Text = "EuhForm"
+        Me.Text = "Zeg eens euh"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

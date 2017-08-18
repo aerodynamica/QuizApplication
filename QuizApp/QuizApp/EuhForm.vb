@@ -39,12 +39,6 @@ Public Class EuhForm
 
     Private Sub EuhForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        NewGame()
-        'UpdateCurrentPlayer(MainMenuForm.data.GetPlayer(0))
-
-        'TimeLeft = 60
-        'lblTimer.Text = TimeLeft.ToString
-
         Bridge = New CardBridge(Me)
         Bridge.Start()
 
@@ -115,9 +109,12 @@ Public Class EuhForm
         StopTimer()
         Dim newForm As New NewEuhForm(Me)
         newForm.Show()
+
+
     End Sub
 
     Private Sub btnStartNew_Click(sender As Object, e As EventArgs) Handles btnStartNew.Click
         NewGame()
     End Sub
+
 End Class

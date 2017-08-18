@@ -76,24 +76,25 @@ Partial Class QuizForm
         '
         'lblBig
         '
-        Me.lblBig.AutoSize = True
+        Me.lblBig.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblBig.Font = New System.Drawing.Font("Microsoft Sans Serif", 90.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBig.Location = New System.Drawing.Point(295, 210)
+        Me.lblBig.Location = New System.Drawing.Point(0, 0)
         Me.lblBig.Name = "lblBig"
-        Me.lblBig.Size = New System.Drawing.Size(343, 135)
+        Me.lblBig.Size = New System.Drawing.Size(947, 577)
         Me.lblBig.TabIndex = 1
         Me.lblBig.Text = "QUIZ"
+        Me.lblBig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'QuizForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(947, 577)
-        Me.Controls.Add(Me.lblBig)
         Me.Controls.Add(Me.lblCandidate4)
         Me.Controls.Add(Me.lblCandidate3)
         Me.Controls.Add(Me.lblCandidate2)
         Me.Controls.Add(Me.lblCandidate1)
+        Me.Controls.Add(Me.lblBig)
         Me.Name = "QuizForm"
         Me.Text = "Quiz-Time!"
         Me.ResumeLayout(False)
