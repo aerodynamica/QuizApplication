@@ -19,7 +19,7 @@ Public Class EuhForm
     Private Sub EuhForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UpdateCurrentPlayer(MainMenuForm.data.GetPlayer(0))
 
-        TimeLeft = 2
+        TimeLeft = 60
         lblTimer.Text = TimeLeft.ToString
 
         Bridge = New CardBridge(Me)
