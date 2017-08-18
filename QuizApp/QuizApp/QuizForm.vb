@@ -68,6 +68,13 @@ Public Class QuizForm
         Player4Watch = New System.Threading.Thread(AddressOf CheckInputPlayer4)
         RefereeWatch = New System.Threading.Thread(AddressOf CheckInputReferee)
 
+        Player1Watch.IsBackground = True
+        Player2Watch.IsBackground = True
+        Player3Watch.IsBackground = True
+        Player4Watch.IsBackground = True
+        RefereeWatch.IsBackground = True
+
+
         Player1Watch.Name = "Player1_Thread"
         Player2Watch.Name = "Player2_Thread"
         Player3Watch.Name = "Player3_Thread"
