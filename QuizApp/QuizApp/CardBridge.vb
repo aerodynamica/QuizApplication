@@ -10,45 +10,67 @@ Public Class CardBridge
 
     Private WithEvents EuhForm As EuhForm
 
+    Private _IsActive As Boolean = False
+
     Public Sub New(ByRef form As EuhForm)
         cc = New Card_Controller()
         EuhForm = form
+        _IsActive = cc.Connect()
     End Sub
 
     Public Sub Start()
         thr = New Thread(AddressOf ThreadTask)
+        thr.Name = "CardBridge"
+        thr.IsBackground = True
         thr.Start()
     End Sub
 
     Public Sub Abort()
+        _IsActive = False
         cc.Disconnect()
         thr.Abort()
+
     End Sub
 
 
 
     Public Sub ThreadTask()
-        cc.Connect()
+
         Do
-            Dim input As Boolean() = cc.CheckAllButtons()
+            If IsActive() Then
+                Dim input As Boolean() = cc.CheckAllButtons()
 
-            For i As Integer = 0 To input.Length - 1
-                If input(i) Then
-                    Dim e As New ButtonPressedEventArgs(i)
-                    RaiseEvent ButtonPressed(Me, e)
-                End If
+                For i As Integer = 0 To input.Length - 1
+                    If input(i) Then
+                        Dim e As New ButtonPressedEventArgs(i)
+                        RaiseEvent ButtonPressed(Me, e)
+                    End If
 
-            Next
+                Next
+            End If
+
 
 
 
         Loop
     End Sub
 
+    Friend Function IsActive() As Boolean
+        Return _IsActive
+    End Function
+
     Private Sub EuhForm_TimeOut(sender As Object, e As EventArgs) Handles EuhForm.TimeOut
-        cc.ActivateLed(1, True)
-        Thread.Sleep(3000)
-        cc.ActivateLed(1, False)
+        Try
+            cc.ActivateLed(1, True)
+            Thread.Sleep(3000)
+            cc.ActivateLed(1, False)
+        Catch ex As Exception
+            Console.WriteLine(ex)
+        End Try
+
+
+
+
     End Sub
 
     Private Sub EuhForm_PlayerInterupt(sender As Object, e As EventArgs) Handles EuhForm.PlayerInterupt
